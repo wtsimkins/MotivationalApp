@@ -1,3 +1,5 @@
+package Model;
+
 public class Console {
     public String getStringInput(){
         return null;

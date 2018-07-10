@@ -26,6 +26,12 @@
             <version>RELEASE</version>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>net.anthavio.disquo</groupId>
+            <artifactId>disquo-api</artifactId>
+            <version>1.0.2</version>
+        </dependency>
     </dependencies>
 
     <properties>

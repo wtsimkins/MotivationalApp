@@ -1,4 +1,8 @@
-public class TopicsUI implements Topics{
+package View;
+
+import Controllers.TopicsController;
+
+public class TopicInfoPage implements TopicsController {
 
     @Override
     public String getDescription() {

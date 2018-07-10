@@ -1,6 +1,8 @@
+package View;
+
 import org.junit.Test;
 
-public class TopicsUITest {
+public class MainTopicsPageTest {
 
     @Test
     public void testGetDescription(){

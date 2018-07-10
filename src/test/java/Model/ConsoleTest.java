@@ -1,3 +1,5 @@
+package Model;
+
 import org.junit.Test;
 
 public class ConsoleTest {

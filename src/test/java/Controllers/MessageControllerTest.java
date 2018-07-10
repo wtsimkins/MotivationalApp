@@ -1,3 +1,5 @@
+package Controllers;
+
 import org.junit.Test;
 
 public class MessageControllerTest {
