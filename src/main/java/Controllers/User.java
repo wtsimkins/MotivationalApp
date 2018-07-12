@@ -1,5 +1,8 @@
 package Controllers;
 
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
 public abstract class User {
     private int id;
     private String name;

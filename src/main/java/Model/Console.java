@@ -1,6 +1,9 @@
 package Model;
 
 public class Console {
+
+    public String print(){return null; }
+
     public String getStringInput(){
         return null;
     }
