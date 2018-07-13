@@ -1,4 +1,4 @@
-package View;
+package com.tyler.motivateme;
 
 import java.util.ArrayList;
 import java.util.List;

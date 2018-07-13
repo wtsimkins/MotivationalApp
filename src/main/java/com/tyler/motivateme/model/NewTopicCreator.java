@@ -1,15 +1,13 @@
-package Model;
+package com.tyler.motivateme.model;
 
-import Controllers.TopicsController;
 
-public class NewTopicCreator implements TopicsController {
+public class NewTopicCreator{
 
-    @Override
     public String getDescription() {
+
         return null;
     }
 
-    @Override
     public String getAdviceAndStrategies() {
         return null;
     }

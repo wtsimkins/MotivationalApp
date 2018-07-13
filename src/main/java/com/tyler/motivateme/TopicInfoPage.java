@@ -1,15 +1,11 @@
-package View;
+package com.tyler.motivateme;
 
-import Controllers.TopicsController;
+public class TopicInfoPage{
 
-public class TopicInfoPage implements TopicsController {
-
-    @Override
     public String getDescription() {
         return null;
     }
 
-    @Override
     public String getAdviceAndStrategies() {
         return null;
     }

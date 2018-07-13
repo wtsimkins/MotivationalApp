@@ -1,4 +1,4 @@
-package Model;
+package com.tyler.motivateme.model;
 
 public class Console {
 

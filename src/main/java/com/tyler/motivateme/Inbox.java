@@ -1,8 +1,6 @@
-package View;
+package com.tyler.motivateme;
 
-import Controllers.MessageController;
-
-public class Inbox extends MessageController {
+public class Inbox {
     private int id;
 
     public Inbox(int id){

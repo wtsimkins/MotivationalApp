@@ -1,8 +1,6 @@
-package View;
+package com.tyler.motivateme;
 
-import Controllers.CommentController;
-
-public class Forum extends CommentController {
+public class Forum {
     private int forumId;
 
     public Forum(int forumId) {
