@@ -1,18 +1,24 @@
 package com.tyler.motivateme.controller;
 
-import com.tyler.motivateme.MainTopicsPage;
+import com.tyler.motivateme.service.TopicInfoPageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/TopicInfo")
 public class TopicInfoPageController {
 
     @Autowired
-    private MainTopicsPage mainTopicsPage;
+    private TopicInfoPageService topicInfoPageService;
 
-    public String getDescription() {return null;}
-    public String getAdviceAndStrategies() {return null;}
+    public void getTopicName() {}
+
+    public void getDescription() {
+
+    }
+
+    public void getAdviceAndStrategies() {
+
+    }
 
 }

@@ -1,7 +1,7 @@
-package model;
+package service;
 
 import com.tyler.motivateme.model.Topic;
-import com.tyler.motivateme.model.TopicCreatorService;
+import com.tyler.motivateme.service.TopicCreatorService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
@@ -12,6 +12,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 @RunWith(SpringRunner.class)
@@ -20,21 +21,6 @@ public class TopicCreatorServiceTest {
 
     TopicCreatorService tcs = new TopicCreatorService();
 
-    @Test
-    public void testGetDescription() {
-        String expected = "This is a description of the topic";
-        tcs.setDescription(expected);
-        String actual = tcs.getDescription();
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    public void testGetAdviceAndStrategies() {
-        String expected = "This is the advice and strategies section of the topic";
-        tcs.setAdviceAndStrategies(expected);
-        String actual = tcs.getAdviceAndStrategies();
-        assertEquals(expected, actual);
-    }
 
     @Test
     public void testAllTopics_AreInList(){
@@ -53,12 +39,32 @@ public class TopicCreatorServiceTest {
     }
 
     @Test
-    public void testAddTopics_toAllTopics(){
+    public void testAddTopic_ToAllTopics(){
         Topic topic = new Topic(4, "working out");
         tcs.add(topic);
 
         List<Topic> topics = tcs.allTopics();
 
         assertTrue(topics.contains(topic));
+    }
+
+    @Test
+    public void testUpdateTopic_InAllTopics(){
+        Topic topic = new Topic(4, "working out");
+        tcs.update(topic);
+
+        List<Topic> topics = tcs.allTopics();
+
+        assertFalse(topics.contains(topic));
+    }
+
+    @Test
+    public void testDeleteTopic_FromAllTopics(){
+        Topic topic = new Topic(2, "Quit Smoking");
+        tcs.delete(topic);
+
+        List<Topic> topics = tcs.allTopics();
+
+        assertFalse(topics.contains(topic));
     }
 }

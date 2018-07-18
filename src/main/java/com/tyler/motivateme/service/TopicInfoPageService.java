@@ -1,9 +1,9 @@
-package com.tyler.motivateme;
+package com.tyler.motivateme.service;
 
 import org.springframework.stereotype.Service;
 
 @Service
-public class TopicInfoPage{
+public class TopicInfoPageService {
 
     public String getTopicName() {return null;}
 
