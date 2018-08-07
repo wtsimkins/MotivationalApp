@@ -1,29 +1,41 @@
 package com.tyler.motivateme.service;
 
-import net.anthavio.disquo.api.DisqusApi;
-import net.anthavio.disquo.api.DisqusApplicationKeys;
-import net.anthavio.disquo.api.response.DisqusPost;
-import net.anthavio.disquo.api.response.DisqusResponse;
+import com.tyler.motivateme.model.Comment;
+import com.tyler.motivateme.repository.CommentRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
 public class ForumService {
-    DisqusApplicationKeys keys = new DisqusApplicationKeys("...api_key...", "...secret_key...");
-    DisqusApi disqus = new DisqusApi(keys);
-    private int forumID;
 
+    @Autowired
+    private CommentRepository commentRepository;
 
-    public ForumService (int forumID) {
-        this.forumID = forumID;
+    public List<Comment> allMessages() {
+        List<Comment> comments = new ArrayList<>();
+        commentRepository.findAll()
+                .forEach(comments::add);
+        return comments;
     }
 
-    public void postComment(int forumID){
-        disqus.forums();
+    public void getAllMessages(Integer id){
+        commentRepository.findById(id);
     }
 
-    public void updateComment(int commentID) {}
 
-    public void deleteComment(int commentID) {}
+    public void postComment(Comment forumID){
+
+        commentRepository.save(forumID);
+    }
+
+    public void updateComment(Comment commentID) {
+        commentRepository.save(commentID);
+    }
+
+    public void deleteComment(Comment commentID) {
+        commentRepository.delete(commentID);
+    }
 }

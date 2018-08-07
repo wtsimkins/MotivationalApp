@@ -1,21 +1,40 @@
 package com.tyler.motivateme.service;
 
+import com.tyler.motivateme.model.Message;
+import com.tyler.motivateme.model.User;
+import com.tyler.motivateme.repository.MessageRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class InboxService {
-    private int userID;
 
-    public InboxService(int userID){
-        this.userID = userID;
+    @Autowired
+    private MessageRepository messageRepository;
+
+    public List<Message> allMessages() {
+        List<Message> messages = new ArrayList<>();
+        messageRepository.findAll()
+                .forEach(messages::add);
+        return messages;
     }
 
-    public void sendMessage(int userID){
+    public void getAllMessages(Integer id){
+        messageRepository.findById(id);
     }
 
-    public void viewMessage(int messageID) {}
+    public void sendMessage(Message userID){
+         messageRepository.save(userID);
+    }
 
-    public void updateMessage(int messageID) {}
+    public void updateMessage(Message messageID) {
+        messageRepository.save(messageID);
+    }
 
-    public void deleteMessage(int messageID) {}
+    public void deleteMessage(Message messageID) {
+        messageRepository.delete(messageID);
+    }
 }
