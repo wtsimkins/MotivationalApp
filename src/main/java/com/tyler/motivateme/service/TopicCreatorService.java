@@ -10,7 +10,7 @@ import java.util.List;
 @Service
 public class TopicCreatorService {
 
-    private List<Topic> topics = new ArrayList<Topic>(Arrays.asList(new Topic(1, "Quit drinking"), new Topic(2, "Quit Smoking"), new Topic(3, "Eat healthier")));
+    private List<Topic> topics = new ArrayList<>();
     private String description;
     private String adviceAndStrategies;
 
@@ -23,7 +23,7 @@ public class TopicCreatorService {
         topics.add(topic);
     }
 
-    public void update(Topic topic) {}
+    public void update(int topicIndex, Topic newTopic) { topics.set(topicIndex, newTopic);}
 
     public void delete(Topic topic) { topics.remove(topic); }
 }

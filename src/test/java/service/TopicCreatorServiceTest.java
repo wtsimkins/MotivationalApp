@@ -24,7 +24,7 @@ public class TopicCreatorServiceTest {
 
     @Test
     public void testAllTopics_AreInList(){
-        List expected = new ArrayList<>(Arrays.asList(new Topic(1, "Quit drinking"), new Topic(2, "Quit Smoking"), new Topic(3, "Eat healthier")));
+        List expected = new ArrayList<>(Arrays.asList());
         List actual = tcs.allTopics();
         assertEquals(expected, actual);
     }
@@ -34,13 +34,13 @@ public class TopicCreatorServiceTest {
     public void testConstruction(){
         List<Topic> topics = tcs.allTopics();
 
-        assertEquals(topics.size(), 3);
-        assertTrue(topics.contains(new Topic(1, "Quit drinking")));
+        assertEquals(topics.size(), 0);
+        assertTrue(topics.contains(0));
     }
 
     @Test
     public void testAddTopic_ToAllTopics(){
-        Topic topic = new Topic(4, "working out");
+        Topic topic = new Topic();
         tcs.add(topic);
 
         List<Topic> topics = tcs.allTopics();
@@ -50,17 +50,18 @@ public class TopicCreatorServiceTest {
 
     @Test
     public void testUpdateTopic_InAllTopics(){
-        Topic topic = new Topic(4, "working out");
-        tcs.update(topic);
+        int topicIndex = 2;
+        Topic newTopic = new Topic();
+        tcs.update(topicIndex, newTopic);
 
         List<Topic> topics = tcs.allTopics();
 
-        assertFalse(topics.contains(topic));
+        assertTrue(topics.contains(newTopic));
     }
 
     @Test
     public void testDeleteTopic_FromAllTopics(){
-        Topic topic = new Topic(2, "Quit Smoking");
+        Topic topic = new Topic();
         tcs.delete(topic);
 
         List<Topic> topics = tcs.allTopics();

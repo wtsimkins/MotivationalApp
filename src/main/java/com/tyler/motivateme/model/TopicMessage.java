@@ -6,8 +6,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Message {
+public class TopicMessage {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int messageID;
+
+    private String user_id;
+    private String topic_id;
+    private int date;
 }

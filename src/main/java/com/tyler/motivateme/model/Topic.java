@@ -16,7 +16,7 @@ public class Topic {
     private String adviceAndStrategies;
 
 
-    public Topic(int id, String name) {
+    public Topic(int id, String name, String description, String adviceAndStrategies) {
         this.id = id;
         this.name = name;
         this.description = description;

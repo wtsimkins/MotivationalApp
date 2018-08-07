@@ -6,9 +6,9 @@ import org.springframework.stereotype.Service;
 public class InboxService {
     private int userID;
 
-//    public InboxService(int userID){
-//        this.userID = userID;
-//    }
+    public InboxService(int userID){
+        this.userID = userID;
+    }
 
     public void sendMessage(int userID){
     }
