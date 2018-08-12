@@ -27,7 +27,8 @@ public class TopicInfoPageService {
 
     }
 
-    public String getAdviceAndStrategies() { return adviceAndStrategies;
+    public String getAdviceAndStrategies() {
+        return adviceAndStrategies;
 
     }
 

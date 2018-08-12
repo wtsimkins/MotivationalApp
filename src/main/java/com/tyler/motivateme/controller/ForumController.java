@@ -1,5 +1,6 @@
 package com.tyler.motivateme.controller;
 
+import com.tyler.motivateme.model.Comment;
 import com.tyler.motivateme.model.Topic;
 import com.tyler.motivateme.service.ForumService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,15 +16,15 @@ public class ForumController {
     ForumService forumService;
 
     @RequestMapping(method = RequestMethod.POST, value = "/forum/{forumid}")
-    public void PostComment(int forumID){
+    public void PostComment(Comment forumID){
         forumService.postComment(forumID); }
 
     @RequestMapping(method = RequestMethod.PUT, value = "/forum/{commentid}")
-    public void updateComment(int commentID){
+    public void updateComment(Comment commentID){
         forumService.updateComment(commentID); }
 
     @RequestMapping(method = RequestMethod.DELETE, value = "/forum/{commentid}")
-    public void deleteComment(int commentID){
+    public void deleteComment(Comment commentID){
         forumService.deleteComment(commentID); }
 
 
