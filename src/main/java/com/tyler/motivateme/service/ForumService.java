@@ -14,8 +14,9 @@ public class ForumService {
     @Autowired
     private CommentRepository commentRepository;
 
+    private List<Comment> comments = new ArrayList<>();
+
     public List<Comment> allMessages() {
-        List<Comment> comments = new ArrayList<>();
         commentRepository.findAll()
                 .forEach(comments::add);
         return comments;
@@ -37,5 +38,21 @@ public class ForumService {
 
     public void deleteComment(Comment commentID) {
         commentRepository.delete(commentID);
+    }
+
+    public CommentRepository getCommentRepository() {
+        return commentRepository;
+    }
+
+    public void setCommentRepository(CommentRepository commentRepository) {
+        this.commentRepository = commentRepository;
+    }
+
+    public List<Comment> getComments() {
+        return comments;
+    }
+
+    public void setComments(List<Comment> comments) {
+        this.comments = comments;
     }
 }
